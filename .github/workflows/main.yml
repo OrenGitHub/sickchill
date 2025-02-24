@@ -2,9 +2,8 @@ name: dhscanner-sast
 
 on:
   push:
-    tags:
-      - '2024.3.1'
-
+    branches:
+      - master
 jobs:
   run-dhscanner:
     runs-on: ubuntu-latest
@@ -18,7 +17,7 @@ jobs:
       - name: checkout specific tag
         uses: actions/checkout@v4
         with:
-          ref: '2024.3.1'
+          ref: 'tag2024.3.1'
 
       - name: send repo code to dhscanner
         run: |
