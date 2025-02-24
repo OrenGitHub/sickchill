@@ -12,8 +12,10 @@ jobs:
       - name: clone dhscanner (with submodules)
         run: |
           git clone --recurse-submodules https://github.com/OrenGitHub/dhscanner
-          cd dhscanner && docker compose -f compose.dev.yaml up -d
-
+          cd dhscanner && docker compose -f compose.rel.x64.yaml up -d
+        env:
+          APPROVED_BEARER_TOKEN_0: ${{ secrets.APPROVED_BEARER_TOKEN_0 }}
+          APPROVED_URL_0: ${{ secrets.APPROVED_URL_0 }}
       - name: checkout specific tag
         uses: actions/checkout@v4
         with:
