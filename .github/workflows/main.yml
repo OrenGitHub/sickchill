@@ -3,7 +3,7 @@ name: dhscanner-sast
 on:
   push:
     branches:
-      - v2024.3.1
+      - master
 jobs:
   run-dhscanner:
     runs-on: ubuntu-latest
