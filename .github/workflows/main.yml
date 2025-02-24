@@ -1,0 +1,33 @@
+name: dhscanner-sast
+
+on:
+  push:
+    tags:
+      - '2024.3.1'
+
+jobs:
+  run-dhscanner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: clone dhscanner (with submodules)
+        run: |
+          git clone --recurse-submodules https://github.com/OrenGitHub/dhscanner
+          cd dhscanner && docker compose -f compose.dev.yaml up -d
+
+      - name: checkout specific tag
+        uses: actions/checkout@v4
+        with:
+          ref: '2024.3.1'
+
+      - name: send repo code to dhscanner
+        run: |
+          tar -cz $(basename $GITHUB_REPOSITORY) | curl -X POST \
+            -H "Content-Type: application/octet-stream" \
+            -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_0}" \
+            -H "X-Directory-Name: sickchill" \
+            -H "Ignore-Testing-Code: true" \
+            --data-binary @- http://127.0.0.1:443/${APPROVED_URL_0}
+        env:
+          APPROVED_BEARER_TOKEN_0: ${{ secrets.APPROVED_BEARER_TOKEN_0 }}
+          APPROVED_URL_0: ${{ secrets.APPROVED_URL_0 }}
