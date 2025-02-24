@@ -2,9 +2,8 @@ name: dhscanner-sast
 
 on:
   push:
-    tags:
-      - 'tag2024.3.1'
-
+    branches:
+      - v2024.3.1
 jobs:
   run-dhscanner:
     runs-on: ubuntu-latest
