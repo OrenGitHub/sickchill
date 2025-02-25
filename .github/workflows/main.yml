@@ -35,7 +35,6 @@ jobs:
         run: |
           curl -v -X POST \
             -H "Content-Type: application/octet-stream" \
-            -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_0}" \
             -H "X-Directory-Name: sickchill" \
             -H "Ignore-Testing-Code: true" \
             http://127.0.0.1:443/${APPROVED_URL_0}
