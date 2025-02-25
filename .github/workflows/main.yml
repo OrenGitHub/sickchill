@@ -25,7 +25,7 @@ jobs:
         run: |
           curl -X GET \
             -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_0}" \
-            http://127.0.0.1:443/${APPROVED_URL_0}/healthcheck
+            http://127.0.0.1:443/${APPROVED_URL_0_HEALTHCHECK}
 
       - name: send repo code to dhscanner
         run: |
