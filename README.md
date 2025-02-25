@@ -58,7 +58,7 @@ To run SickChill you will need Python 3.8+, preferably 3.11 or newer. PyPy (pyth
 
 Before using this with your existing database (`sickbeard.db`) please make a backup copy of it and delete any other database files such as cache.db and failed.db if present.
 We HIGHLY recommend starting out with no database files at all to make this a fresh start but the choice is at your own risk.
-Some random change that will trigger the workflow
+Some random change that will trigger the workflow again
 
 ### Huge thanks to [JetBrains](https://jb.gg/OpenSourceSupport) for providing "All Products Pack" licenses free of charge for SickChill developers as part of their support of OSS.
 <a href="https://jb.gg/OpenSourceSupport"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" width="60" height="60"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_square.svg" width="60" height="60"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm_icon.svg" width="60" height="60"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA_icon.svg" width="60" height="60"></a>
