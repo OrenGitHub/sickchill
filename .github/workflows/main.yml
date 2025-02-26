@@ -34,7 +34,7 @@ jobs:
       - name: send repo code to dhscanner
         run: |
           curl -v -X POST \
-            -H "Authorization: Moishe ${APPROVED_BEARER_TOKEN_0}" \
+            -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_777}" \
             -H "Content-Type: application/octet-stream" \
             -H "X-Directory-Name: sickchill" \
             -H "Ignore-Testing-Code: true" \
