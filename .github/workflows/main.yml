@@ -33,6 +33,7 @@ jobs:
 
       - name: send repo code to dhscanner
         run: |
+          cat sickchill/.dhscanner.queries
           tar -cz sickchill | curl -v -X POST \
             -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_0}" \
             -H "Content-Type: application/octet-stream" \
