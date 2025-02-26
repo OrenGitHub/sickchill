@@ -37,7 +37,7 @@ jobs:
             -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_0}" \
             -H "Content-Type: application/octet-stream" \
             -H "X-Directory-Name: sickchill" \
-            -H "Ignore-Testing-Code: true" \
+            -H "Ignore-Testing-Code: false" \
             http://127.0.0.1:443/${APPROVED_URL_0}
         env:
           APPROVED_BEARER_TOKEN_0: ${{ secrets.APPROVED_BEARER_TOKEN_0 }}
