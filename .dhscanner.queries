@@ -1,0 +1,1 @@
+user_input_might_reach_function('tornado.web.RequestHandler.redirect').
