@@ -37,7 +37,7 @@ jobs:
 
       - name: send repo code to dhscanner
         run: |
-          tar -czf repo.tar.gz $(basename $GITHUB_REPOSITORY)
+          tar --exclude='repo.tar.gz' -czf repo.tar.gz .
           curl -v -X POST \
             -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_0}" \
             -H "Content-Type: application/octet-stream" \
