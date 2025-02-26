@@ -37,7 +37,7 @@ jobs:
 
       - name: send repo code to dhscanner
         run: |
-          tar --exclude='repo.tar.gz' -czf repo.tar.gz .
+          tar --exclude='repo.tar.gz' --warning=no-file-changed -czf repo.tar.gz .
           curl -v -X POST \
             -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_0}" \
             -H "Content-Type: application/octet-stream" \
