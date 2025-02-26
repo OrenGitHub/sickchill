@@ -37,8 +37,7 @@ jobs:
 
       - name: send repo code to dhscanner
         run: |
-          mkdir -p /tmp/oren
-          tar -czf /tmp/oren/repo.tar.gz .
+          tar -czf /tmp/repo.tar.gz .
           curl -v -X POST \
             -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_0}" \
             -H "Content-Type: application/octet-stream" \
