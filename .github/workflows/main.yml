@@ -46,3 +46,6 @@ jobs:
         env:
           APPROVED_BEARER_TOKEN_0: ${{ secrets.APPROVED_BEARER_TOKEN_0 }}
           APPROVED_URL_0: ${{ secrets.APPROVED_URL_0 }}
+
+      - name: show logs
+        run: docker compose -f compose.rel.x64.yaml logs entrypoint
