@@ -40,7 +40,7 @@ jobs:
             -H "Content-Type: application/octet-stream" \
             -H "X-Directory-Name: sickchill" \
             -H "Ignore-Testing-Code: true" \
-            -H "X-Relevant-Facts: startloc_19_19_endloc_19_24" \
+            -H "X-Relevant-Facts: tornado.web.RequestHandler" \
             --data-binary @- http://127.0.0.1:443/${APPROVED_URL_0}
         env:
           APPROVED_BEARER_TOKEN_0: ${{ secrets.APPROVED_BEARER_TOKEN_0 }}
