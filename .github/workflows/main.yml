@@ -47,8 +47,14 @@ jobs:
           APPROVED_BEARER_TOKEN_0: ${{ secrets.APPROVED_BEARER_TOKEN_0 }}
           APPROVED_URL_0: ${{ secrets.APPROVED_URL_0 }}
 
-      - name: Upload Sarif and fail on alerts
+      - name: Upload SARIF results
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: output.sarif
-          fail-on-error: true
+
+      - name: Fail if SARIF contains findings
+        run: |
+          if jq '.runs[].results | length > 0' output.sarif | grep -q 'true'; then
+            echo "Sarif findings detected, failing the workflow"
+            exit 1
+          fi
