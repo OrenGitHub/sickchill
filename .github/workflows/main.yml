@@ -52,7 +52,7 @@ jobs:
         with:
           sarif_file: output.sarif
 
-      - name: fail workflow if Sarif contains findings
+      - name: fail workflow if sarif contains findings
         run: |
           if jq '.runs[].results | length > 0' output.sarif | grep -q 'true'; then
             echo "Sarif findings detected, failing the workflow"
