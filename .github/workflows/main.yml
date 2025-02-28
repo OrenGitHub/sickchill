@@ -40,7 +40,7 @@ jobs:
             -H "Content-Type: application/octet-stream" \
             -H "X-Directory-Name: sickchill" \
             -H "Ignore-Testing-Code: true" \
-            -H "X-Relevant-Facts: startloc_33_8_endloc_33_65" \
+            -H "X-Relevant-Facts: startloc_33_22_endloc_33_64" \
             --data-binary @- http://127.0.0.1:443/${APPROVED_URL_0}
         env:
           APPROVED_BEARER_TOKEN_0: ${{ secrets.APPROVED_BEARER_TOKEN_0 }}
