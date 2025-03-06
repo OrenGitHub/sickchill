@@ -33,7 +33,7 @@ jobs:
           APPROVED_BEARER_TOKEN_0: ${{ secrets.APPROVED_BEARER_TOKEN_0 }}
           APPROVED_URL_0_HEALTHCHECK: ${{ secrets.APPROVED_URL_0_HEALTHCHECK }}
 
-      - name: send the whole repo to dhscanner
+      - name: send the entire repo to dhscanner
         run: |
           tar -cz . | curl -v -X POST \
             -H "Authorization: Bearer ${APPROVED_BEARER_TOKEN_0}" \
